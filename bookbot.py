@@ -1,0 +1,125 @@
+'''
+Bookbot reads a book from a text file and prints out a simple report about it
+to the standard output.
+'''
+import argparse
+
+
+def main() -> None:
+    '''The entrypoint to the bookbot code.'''
+    parser = argparse.ArgumentParser(
+        prog='Bookbot',
+        description='Bookbot produces a simple book report.',
+    )
+    parser.add_argument(
+        'filename',
+        type=str,
+        help='the path to the text file.'
+    )
+    args = parser.parse_args()
+    text = read_file(args.filename)
+    report(args.filename, number_of_words(text), character_map(text))
+
+
+def read_file(path: str) -> str:
+    '''
+    Opens a file from a given file path and returns the contents of the file.
+
+        Parameters:
+            path (str): The path to the text file.
+
+        Returns:
+            text (str): The contents of the text file.
+    '''
+    with open(path, mode='r', encoding='utf-8') as file:
+        text = file.read()
+        return text
+
+
+def number_of_words(text: str) -> int:
+    '''
+    Returns the number of words in a given text string.
+
+        Parameters:
+            text (str): The string of text.
+
+        Returns:
+            num_words (int): The number of words in the text.
+    '''
+    num_words = len(text.split())
+    return num_words
+
+
+def character_map(text: str) -> dict[str, int]:
+    '''
+    Returns a dictionary with the amount of times
+    a character appears in a given text.
+
+    Non-letter characters are ignored.
+
+        Parameters:
+            text (str): The string of text.
+
+        Returns:
+            output (dict[str, int]): A dictionary with the amount of times each
+                                     character appears in the text.
+    '''
+    output = {
+        'a': 0,
+        'b': 0,
+        'c': 0,
+        'd': 0,
+        'e': 0,
+        'f': 0,
+        'g': 0,
+        'h': 0,
+        'i': 0,
+        'j': 0,
+        'k': 0,
+        'l': 0,
+        'm': 0,
+        'n': 0,
+        'o': 0,
+        'p': 0,
+        'q': 0,
+        'r': 0,
+        's': 0,
+        't': 0,
+        'u': 0,
+        'v': 0,
+        'w': 0,
+        'x': 0,
+        'y': 0,
+        'z': 0,
+    }
+
+    for character in text:
+        if character.lower() in output:
+            output[character.lower()] += 1
+
+    return output
+
+
+def report(path: str, total_words: int, characters: dict[str, int]) -> None:
+    '''
+    Prints a report about the given text.
+
+        Parameters:
+            path (str): The path to the text file.
+            total_words (int): The total amount of words found in the
+                               text file.
+            characters: The dictionary with the amount of times
+                           each character appears in the text.
+
+        Returns:
+            None
+    '''
+    print(f"--- Begin report of {path} ---")
+    print(f"{total_words} words found in the document\n")
+    for key, value in characters.items():
+        print(f"The character '{key}' was found {value} times")
+    print("--- End report ---")
+
+
+if __name__ == "__main__":
+    main()
