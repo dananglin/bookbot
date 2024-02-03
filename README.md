@@ -36,7 +36,7 @@ curl -L https://raw.githubusercontent.com/asweigart/codebreaker/master/frankenst
 
 Run Bookbot to produce the book report.
 
-```sh
+```
 $ ./bookbot books/frankenstein.txt
 --- Begin report of books/frankenstein.txt ---
 77986 words found in the document
