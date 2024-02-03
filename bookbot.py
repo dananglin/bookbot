@@ -94,8 +94,9 @@ def character_map(text: str) -> dict[str, int]:
     }
 
     for character in text:
-        if character.lower() in output:
-            output[character.lower()] += 1
+        lowercase_character = character.lower()
+        if lowercase_character in output:
+            output[lowercase_character] += 1
 
     return output
 
