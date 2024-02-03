@@ -23,7 +23,7 @@ cd bookbot
 You can print the program's help message with the `-h` flag.
 
 ```sh
-python bookbot.py -h
+./bookbot -h
 ```
 
 Download a book in text format (e.g. txt, markdown, etc).
@@ -37,7 +37,7 @@ curl -L https://raw.githubusercontent.com/asweigart/codebreaker/master/frankenst
 Run Bookbot to produce the book report.
 
 ```sh
-$ python bookbot.py books/frankenstein.txt
+$ ./bookbot books/frankenstein.txt
 --- Begin report of books/frankenstein.txt ---
 77986 words found in the document
 
