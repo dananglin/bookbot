@@ -2,7 +2,10 @@
 
 ### Summary
 
-Bookbot reads a book from a text file and prints a simple book report to the standard output.
+Bookbot reads a book from a text file,
+counts the number of words and characters in the book
+and prints the results in a simple book report to the
+standard output (console screen).
 
 ### Requirements
 
@@ -27,7 +30,7 @@ Download a book in text format (e.g. txt, markdown, etc).
 As an example you can download the free ebook called `Frankenstein or The Modern Prometheus` from [here](https://raw.githubusercontent.com/asweigart/codebreaker/master/frankenstein.txt).
 
 ```sh
-mkdir books
+mkdir -p books
 curl -L https://raw.githubusercontent.com/asweigart/codebreaker/master/frankenstein.txt -o books/frankenstein.txt
 ```
 
