@@ -7,6 +7,11 @@ counts the number of words and characters in the book
 and prints the results in a simple book report to the
 standard output (console screen).
 
+### Repository mirrors
+
+**GitHub:** https://github.com/dananglin/bookbot
+**Code Flow:** https://codeflow.dananglin.me.uk/apollo/bookbot
+
 ### Requirements
 
 Python version 3.0 or higher.
